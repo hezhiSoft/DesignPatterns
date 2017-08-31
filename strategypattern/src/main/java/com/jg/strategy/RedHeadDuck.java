@@ -1,5 +1,9 @@
 package com.jg.strategy;
 
+import com.jg.strategy.behavior.FlyWithWings;
+import com.jg.strategy.behavior.Gua;
+import com.jg.strategy.behavior.SwimmingInWater;
+
 /**
  * 红头鸭
  * <p>
@@ -12,8 +16,15 @@ package com.jg.strategy;
 
 public class RedHeadDuck extends Duck {
 
+    RedHeadDuck(){
+        setFlyBehavior(new FlyWithWings());
+        setQuackBehavior(new Gua());
+        setSwimBehavior(new SwimmingInWater());
+    }
+
     @Override
     void display() {
         System.out.println("我是红头鸭...");
     }
+
 }

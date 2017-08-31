@@ -11,9 +11,27 @@ package com.jg.strategy;
 public class StrategyPatternTest {
 
     public static void main(String args[]){
-        RedHeadDuck redHeadDuck=new RedHeadDuck();
-        redHeadDuck.quack();
+        Duck redHeadDuck=new RedHeadDuck();
         redHeadDuck.display();
+        redHeadDuck.performFly();
+        redHeadDuck.performQuack();
+        redHeadDuck.performSwim();
+
+        System.out.println("------------------------");
+
+        Duck mallardDuck=new MallardDuck();
+        mallardDuck.display();
+        mallardDuck.performFly();
+        mallardDuck.performQuack();
+        mallardDuck.performSwim();
+
+        System.out.println("------------------------");
+
+        Duck modelDuck=new ModelDuck();
+        modelDuck.display();
+        modelDuck.performFly();
+        modelDuck.performQuack();
+        modelDuck.performSwim();
 
     }
 }

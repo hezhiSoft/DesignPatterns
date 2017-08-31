@@ -1,5 +1,9 @@
 package com.jg.strategy;
 
+import com.jg.strategy.behavior.FlyBehavior;
+import com.jg.strategy.behavior.QuackBehavior;
+import com.jg.strategy.behavior.SwimBehavior;
+
 /**
  * 鸭子超类
  * <p>
@@ -12,6 +16,12 @@ package com.jg.strategy;
 
 public abstract class Duck {
 
+    public Duck(){}
+
+    public FlyBehavior flyBehavior;
+    public QuackBehavior quackBehavior;
+    public SwimBehavior swimBehavior;
+
 
     /**
      *每个鸭子外观不一样，由子类实现
@@ -20,24 +30,48 @@ public abstract class Duck {
      *created at 2017/8/21 下午9:26
      */
     abstract void display();
-    
+
     /**
-     *鸭子行为-叫
-     * 
+     *设置飞行行为
+     *
      *author: hezhiWu
-     *created at 2017/8/21 下午9:18
+     *created at 2017/8/31 下午4:19
      */
-    public void quack(){
-        System.out.println("所有鸭子都会叫...");
+    public void setFlyBehavior(FlyBehavior flyBehavior) {
+        this.flyBehavior = flyBehavior;
     }
-    
+
     /**
-     *鸭子行为-游泳
-     * 
+     *设置叫行为
+     *
      *author: hezhiWu
-     *created at 2017/8/21 下午9:19
+     *created at 2017/8/31 下午4:20
      */
-    public void swim(){
-        System.out.println("所有鸭子都会游泳...");
+    public void setQuackBehavior(QuackBehavior quackBehavior) {
+        this.quackBehavior = quackBehavior;
     }
+
+    /**
+     *设置游泳行为
+     *
+     *author: hezhiWu
+     *created at 2017/8/31 下午4:28
+     */
+    public void setSwimBehavior(SwimBehavior swimBehavior){
+        this.swimBehavior=swimBehavior;
+    }
+
+    public void performFly(){
+        flyBehavior.fly();
+    }
+
+    public void performQuack(){
+        quackBehavior.quack();
+    }
+
+    public void performSwim(){
+        swimBehavior.swim();
+    }
+
+
 }

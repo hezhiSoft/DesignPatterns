@@ -1,5 +1,10 @@
 package com.jg.strategy;
 
+import com.jg.strategy.behavior.FlyWithWings;
+import com.jg.strategy.behavior.Gua;
+import com.jg.strategy.behavior.MuteQuack;
+import com.jg.strategy.behavior.SwimmingInWater;
+
 /**
  * 绿头鸭
  * <p>
@@ -12,8 +17,14 @@ package com.jg.strategy;
 
 public class MallardDuck extends Duck{
 
+    MallardDuck(){
+        setFlyBehavior(new FlyWithWings());
+        setQuackBehavior(new Gua());
+        setSwimBehavior(new SwimmingInWater());
+    }
+
     @Override
     void display() {
-        System.out.println("我的绿头鸭...");
+        System.out.println("我是绿头鸭...");
     }
 }

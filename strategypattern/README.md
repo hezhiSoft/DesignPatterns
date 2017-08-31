@@ -1,7 +1,15 @@
 # 策略模式(Strategy Pattern)
 #### 策略模式定义了算法族，分别封装起来，让它们之间可以互相替换，此模式让算法的变化独立于使用算法的客户。
 #### 策略模式UML图
-        ![Image](http://imgsrc.baidu.com/image/c0%3Dshijue1%2C0%2C0%2C294%2C40/sign=3d2175db3cd3d539d530078052ee8325/b7003af33a87e950c1e1a6491a385343fbf2b425.jpg)
+
+可以看到，策略模式中主要有以下几个角色：
+
+Strategy 接口，用于定义算法的固定套路
+ConcreteStrategyA , …..B , 等具体算法实现类
+Context 外部调用类
+
+Context 中引用的是 接口，因此当更换具体实现时，Context 不用修改代码，这就是针对接口编程的好处。
+
 # 需求
     1、红头鸭：会飞,会呱呱叫,会游泳
     2、绿头鸭：会飞，会呱呱叫，会游泳
